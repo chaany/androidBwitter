@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobile Bwitter</title>
+</head>
+<body>
+    <style>
+        header{
+            width: 100%;
+            height: 70px;
+            background: rgb(33 33 33 / 98%);
+            align-items: center;
+            float: left;
+     
+            
+            
+
+        }
+        main{
+            width: 100%;
+            height: 100%;
+            background: #181818;
+            overflow-y: auto;
+            flex-direction: column;
+            
+            
+            
+        }
+        body{
+            background: #181818;
+
+            
+        }
+        #pic_ac{
+            width: 55px;
+            height: 60px;
+            padding-top: 5px;
+            margin-left: 2px;
+            
+        }
+        #not{
+            padding-top:6px;
+            width: 55px;
+            height: 55px;
+            
+        }
+
+        </style>
+
+    <header style="flex-direction: row;">
+        <div style="float: left;display: flex;">
+        <img src="pic_ac.png" alt="" id="pic_ac">
+        <img src="notifacations.png" alt="" id="not">
+        </div>
+        <button type="button" id="bweet" style="margin-top:10px;width: 80px;height: 40px;border-radius: 5px;align-items: center;justify-content: center;border: none;background-color: #0072dd;font-size: medium;margin-top: 12px;" >Bweet</button>
+        
+        <button type="button" id="delete" style="margin-left: 2px;margin-top:10px;width: 80px;height: 40px;border-radius: 5px;align-items: center;justify-content: center;border: none;background-color: #dd0000;font-size: medium;margin-top: 12px;" >Delete</button>
+    </header>
+    <main id="content">
+        <article style="flex-direction: column;display: flex;width: 95%;height: 20%;background: #202020;margin-left: 2.5%;margin-top: 2.5%;border-radius: 10px;">
+            <div style="display: flex;align-items: center;">
+                <img src="pic_ac.png" alt="" style="margin-left: 5px;width: 40px;height: 40px;">
+                <p style="font-size: larger;color: white;margin-left: 6px;">CoderMero</p>
+                
+                
+            </div>
+            
+            
+            <textarea style="resize: none;height: 50%;width: 96%;margin-left: 2%;border-radius: 10px;background: #181818;color: white;font-size: large;"></textarea>
+            <div>
+                <img src="heart.png" style="margin-left: 10px;width: 20px;height: 20px;margin-top: 5px;">
+                <img src="like.png" style="margin-left: 1px;width: 20px;height: 20px;margin-top: 5px;">
+            </div>
+            
+        </article>
+
+    </main>
+    <script>
+        var bweet = document.getElementById("bweet")
+        var main = document.getElementById("content")
+        var Delete = document.getElementById("delete")
+        bweet.onclick = () =>{
+            main.innerHTML = main.innerHTML + `        <article style="flex-direction: column;display: flex;width: 95%;height: 20%;background: #202020;margin-left: 2.5%;margin-top: 2.5%;border-radius: 10px;">
+            <div style="display: flex;align-items: center;">
+                <img src="pic_ac.png" alt="" style="margin-left: 5px;width: 40px;height: 40px;">
+                <p style="font-size: larger;color: white;margin-left: 6px;">CoderMero</p>
+                
+                
+            </div>
+            
+            
+            <textarea style="resize: none;height: 50%;width: 96%;margin-left: 2%;border-radius: 10px;background: #181818;color: white;font-size: large;"></textarea>
+            <div>
+                <img src="heart.png" style="margin-left: 10px;width: 20px;height: 20px;margin-top: 5px;">
+                <img src="like.png" style="margin-left: 1px;width: 20px;height: 20px;margin-top: 5px;">
+            </div>
+            
+        </article>`
+        localStorage.setItem("item", main.innerHTML);
+        }
+        Delete.onclick = () =>{
+            main.innerHTML = ``
+            localStorage.setItem("item", main.innerHTML);
+        }
+        onload = () =>{
+            main.innerHTML = localStorage.getItem("item", main.innerHTML);
+        }
+    </script>
+</body>
+</html>
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
